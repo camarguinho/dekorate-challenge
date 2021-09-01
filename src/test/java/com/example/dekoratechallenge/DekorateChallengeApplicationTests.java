@@ -25,7 +25,7 @@ class DekorateChallengeApplicationTests {
 	@Test
 	public void testHelloEndpoint() {
 		given()
-				.when().get("/greeting")
+				.when().get("/")
 				.then()
 				.statusCode(200)
 				.body(is("Hello world"));
