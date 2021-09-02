@@ -1,6 +1,7 @@
 # dekorate-challenge
 
 ##Introduction
+
 The main goal will be for you to deploy a Spring Boot Application in OpenShift using Dekorate for generating and customizing its OpenShift manifests.
 The purpose of this challenge is to demonstrate the following:
 
