@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.example</groupId>
 	<artifactId>dekorate-challenge</artifactId>
-	<version>2.3-SNAPSHOT</version>
+	<version>1.0-SNAPSHOT</version>
 	<name>dekorate-challenge</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
