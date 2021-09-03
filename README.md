@@ -7,7 +7,7 @@ The purpose of this challenge is to demonstrate the following:
 
 - How you can use the openshift-spring-starter which contains all the required modules, including the annotation processors that detect spring web applications.
 - How Dekorate detects that this is a web app and automatically configures services.
-- How you can trigger an container image build after the compilation.
+- How you can trigger a container image build after the compilation.
 
 If you have never used Dekorate before, I recommend checking the [Dekorate github repository](https://github.com/dekorateio/dekorate#readme) where you will find a complete documentation of the project with plenty of [examples](https://github.com/dekorateio/dekorate/tree/master/examples). 
 There also are a couple of very useful blog posts to have a global vision about how to use Dekorate:
