@@ -1,4 +1,4 @@
-# dekorate-challenge
+# Dekorate Challenge
 
 ## Introduction
 
