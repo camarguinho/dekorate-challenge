@@ -1,4 +1,4 @@
-package com.example.dekoratechallenge;
+package com.santander.games.challenges.dekorate;
 
 import io.restassured.RestAssured;
 import org.junit.jupiter.api.BeforeEach;
@@ -7,7 +7,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.web.server.LocalServerPort;
 
 import static io.restassured.RestAssured.given;
-import static io.restassured.RestAssured.get;
 
 import static org.hamcrest.CoreMatchers.is;
 
