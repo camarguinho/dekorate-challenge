@@ -1,4 +1,4 @@
-package com.example.dekoratechallenge;
+package com.santander.games.challenges.dekorate;
 
 
 import org.springframework.web.bind.annotation.RequestMapping;
