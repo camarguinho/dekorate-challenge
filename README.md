@@ -14,9 +14,97 @@ There also are a couple of very useful blog posts to have a global vision about 
 - [Dekorate for creating K8s manifests](https://developers.redhat.com/blog/2019/08/15/how-to-use-dekorate-to-create-kubernetes-manifests)
 - [Dekorate for frameworkless applications](https://developers.redhat.com/blog/2021/03/17/using-dekorate-to-generate-kubernetes-manifests-for-java-applications)
 
+## Prerequisites
 
-## Set up
-As this exercise is focused on the deployment of a simple Spring Boot Microservice Application, you are provided with the code for the  application. It is a minimal Hello World application based on Spring Boot. The code is available on the `src` folder of this repo.
+First, make sure you have a Web browser installed on your laptop and internet connectivity. You will also need a GitHub account.
+
+You can complete this challenge using either your own local environment or the remote one that we are providing you.
+
+This workshop will make use of the following software and tools that you will need to install if you are using your own local environment:
+- an IDE
+- JDK 8+ installed with JAVA_HOME configured appropriately
+- Apache Maven 3.6.3+
+- Access to an OpenShift cluster (we will provide it)
+- The `oc` CLI utility (Optional. Only required for manually deploying)
+
+If you don't have the above tools and don't want to spend time installing them, you can also use the Code Ready Workspace that we will provide.
+This remote development environment can be accessed via CodeReady Workspaces (CRW) through your local browser, you just need to sign up and configure some elements. Your environment includes also Red Hat’s OpenShift Container Platform (OCP).
+
+Anyway you decide to work (with a local development environment or the remote one using Code Ready Workspaces) the first thing that you have to do is forking this repository. As this exercise is focused on the deployment of a simple Spring Boot Microservice Application, you are provided with the code for such application. It is a minimal Hello World application based on Spring Boot. The code is available on the `src` folder of this repo.
+Forking a repository allows to create a copy of the repository in your own GitHub account, this way we avoid conflicts by pushing to the same remote repository. 
+
+To fork the original repo, click in the `Fork` button in the upper-right corner:
+
+![fork-repo](fork-repo.png)
+
+NOTE: Choose your own GitHub account as destination.
+
+If you are not in a CodeReady Workspaces mood, just scroll to [Set up](#set-up)
+
+### CodeReady Workspaces
+
+CodeReady Workspaces is a collaborative Kubernetes-native development solution that delivers OpenShift workspaces and in-browser IDE for rapid cloud application development.
+
+
+#### CRW access
+
+- Choose an user. This user will be used to access the CRW and the OpenShift Web Console.
+- Launch the CRW creation by clicking the CodeReady Workspaces link (specific to your team) mentioned in the access data email.
+- Once the CRW creation done, access to your CRW and sign up with your own user (selected previously) and full fill the form:
+
+  user: USERNAME
+  pwd: openshift
+  email: USERNAME@ocp.com
+  first name: John
+  last name: Sanchez
+
+If everything goes well, you should have land to the Workspace creation page:
+
+![workspace-from-template](CRW-workspace-from-template.png)
+
+You can now create your workspace either using a template (the Quarkus template).
+Once created you should have a CodeReady Workspace ready to start to code:
+
+![workspace-ready](CRW-workspace-ready.png)
+
+Finally, open a terminal from the Terminal menu -> Open Terminal in specific container -> maven and make sure the following commands work on your CRW terminal
+
+```
+$ java -version
+$ mvn -version
+$ curl --version
+```
+
+### OpenShift Container Platform
+
+Your environment includes Red Hat's OpenShift Container Platform (OCP).
+
+Access to your OCP resources can be gained via both the `oc` CLI utility and the OCP web console (you should have received the URL by email)
+
+The project we are going to develop will contain 1 microservices accessing to a PostgreSQL database.
+In the terminal of your CRW, authenticate into OpenShift as a non cluster admin user (USERNAME) using the `oc` utility.
+
+NOTE: You can get the command for authenticating from the OpenShift Web Console.
+
+```
+$ oc login
+```
+
+There are 2 namespaces (OpenShift projects) in your OpenShift cluster:
+The namespace for hosting your CRW environment is USERNAME-codeready where `USERNAME` correspond to your specific username.
+The namespace for hosting database and microservice is USERNAME-dekorate-challenge.
+
+NOTE: change the USERNAME with your own.
+
+## Set-up
+
+Once you have forked the repository, you can clone it in order to have the code in your local machine:
+
+```shell
+git clone $URL/dekorate-challenge
+```
+
+As already mentioned, you are provided with the code of the application. It is a minimal Hello World application based on Spring Boot and Maven. The code is available on the `src` folder of this repo.
 Navigate to the directory and build the project by running the following command:
 ```
 mvn package
@@ -24,7 +112,10 @@ mvn package
 You can launch the application by running `mvn spring-boot:run` or `java -jar target/dekorate-challenge-1.0-SNAPSHOT.jar`.
 Then, open a browser to [http://localhost:8080](http://localhost:8080) and verify that the `Hello world` message is shown. Now you are set for starting to use Dekorate.
 
-Once you have done the needed actions to enable and configure Dekorate, the OpenShift manifests are available in the `target/classes/META-INF/dekorate` directory. As mentioned in the different documentation resources, it is generated at every `mvn compile` launching.
+
+Congratulations! Your environment is now ready to use. Once you have done the needed actions to enable and configure Dekorate, the OpenShift manifests are available in the `target/classes/META-INF/dekorate` directory. As mentioned in the different documentation resources, it is generated at every `mvn compile` launching.
+
+
 
 ## Bonus track (optional)
 This challenge comes with 1 bonus track where you will learn how to configure the image build strategy that OpenShift will use. Apart from S2I for OpenShift, Dekorate currently supports Docker and Jib as image build strategies, feel free to choose one of them to complete this part.
