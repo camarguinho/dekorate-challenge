@@ -30,7 +30,7 @@ This workshop will make use of the following software and tools that you will ne
 If you don't have the above tools and don't want to spend time installing them, you can also use the Code Ready Workspace that we will provide.
 This remote development environment can be accessed via CodeReady Workspaces (CRW) through your local browser, you just need to sign up and configure some elements. Your environment includes also Red Hat’s OpenShift Container Platform (OCP).
 
-Anyway you decide to work (with a local development environment or the remote one using Code Ready Workspaces) the first thing that you have to do is forking this repository. As this exercise is focused on the deployment of a simple Spring Boot Microservice Application, you are provided with the code for such application. It is a minimal Hello World application based on Spring Boot. The code is available on the `src` folder of this repo.
+However you decide to work (with a local development environment or the remote one using Code Ready Workspaces) the first thing that you have to do is forking this repository. As this exercise is focused on the deployment of a simple Spring Boot Microservice Application, you are provided with the code for such application. It is a minimal Hello World application based on Spring Boot. The code is available on the `src` folder of this repo.
 Forking a repository allows to create a copy of the repository in your own GitHub account, this way we avoid conflicts by pushing to the same remote repository. 
 
 To fork the original repo, click in the `Fork` button in the upper-right corner:
@@ -53,19 +53,28 @@ CodeReady Workspaces is a collaborative Kubernetes-native development solution t
 - Once the CRW creation done, access to your CRW and sign up with your own user (selected previously) and full fill the form:
 
   user: USERNAME
-  pwd: openshift
-  email: USERNAME@ocp.com
-  first name: John
+  
+  pwd: openshift  
+  
+  email: USERNAME@ocp.com  
+  
+  first name: John  
+  
   last name: Sanchez
+
 
 If everything goes well, you should have land to the Workspace creation page:
 
 ![workspace-from-template](CRW-workspace-from-template.png)
 
-You can now create your workspace either using a template (the Quarkus template).
+You can now create your workspace either using a template (the Spring Boot template).
 Once created you should have a CodeReady Workspace ready to start to code:
 
 ![workspace-ready](CRW-workspace-ready.png)
+
+Now, you need to get the code of the application that you are going to deploy. For that use the `Git Clone` option proposed by CRW:
+
+![git-clone](CRW-git-clone.png)
 
 Finally, open a terminal from the Terminal menu -> Open Terminal in specific container -> maven and make sure the following commands work on your CRW terminal
 
@@ -103,6 +112,8 @@ Once you have forked the repository, you can clone it in order to have the code 
 ```shell
 git clone $URL/dekorate-challenge
 ```
+
+## Let's code
 
 As already mentioned, you are provided with the code of the application. It is a minimal Hello World application based on Spring Boot and Maven. The code is available on the `src` folder of this repo.
 Navigate to the directory and build the project by running the following command:
