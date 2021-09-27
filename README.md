@@ -131,7 +131,7 @@ oc project $USERNAME-dekorate-challenge
 oc apply -f target/classes/META-INF/dekorate/openshift.yml
 ```
 
-*Important* be sure to deploy the application in the USERNAME-dekorate-challenge namespace.
+NOTE: If the $USERNAME-dekorate-challenge namespace doesn't exist, you can create it by running: `oc new-project USERNAME-dekorate-challenge` .
 
 Or if you prefer, you can also use the hooks provided by Dekorate ;-) and do it in a single step:
 
@@ -141,6 +141,10 @@ mvn clean package -Ddekorate.build=true -Ddekorate.push=true -Ddekorate.deploy=t
 Note that depending on the Image Build strategy you are using some of these flags might not be needed. Also, you may need to be logged in to an Image Registry in order to be able to push the container image.
 
 As deliverables, we would like to have the url of the Spring Boot Application deployed on OpenShift and a github repository containing the code that you should have modified to generate/customize the OpenShift manifests.
+
+## Deliverables:
+In order to verify that the challenge has been completed, we expect a file containing the url to access the microservice on OpenShift and the url to the GitHub repository containing the code. (.txt doc with 2 urls).
+
 
 ## Need help?
 
