@@ -92,7 +92,7 @@ $ oc login
 
 There are 2 namespaces (OpenShift projects) in your OpenShift cluster:
 The namespace for hosting your CRW environment is USERNAME-codeready where `USERNAME` correspond to your specific username.
-The namespace for hosting database and microservice is USERNAME-dekorate-challenge.
+The namespace for hosting the microservice is USERNAME-dekorate-challenge.
 
 NOTE: change the USERNAME with your own.
 
@@ -127,8 +127,12 @@ Remember to deploy the application on the OpenShift cluster using the manifests 
 Once the manifests have been generated under the `target/classes/META-INF/dekorate` directory, you can deploy the application to the OpenShift cluster by running the following commands:
 ```shell
 oc login
+oc project $USERNAME-dekorate-challenge
 oc apply -f target/classes/META-INF/dekorate/openshift.yml
 ```
+
+*Important* be sure to deploy the application in the USERNAME-dekorate-challenge namespace.
+
 Or if you prefer, you can also use the hooks provided by Dekorate ;-) and do it in a single step:
 
 ```shell
@@ -138,5 +142,10 @@ Note that depending on the Image Build strategy you are using some of these flag
 
 As deliverables, we would like to have the url of the Spring Boot Application deployed on OpenShift and a github repository containing the code that you should have modified to generate/customize the OpenShift manifests.
 
-I will be joinable during the Developer Games to resolve any doubts or questions you may have.
+## Need help?
+
+Remember that we are all here to answer any questions and support you during all the Developer Games:
+
+DevelopergamesEMEA@redhat.com
+
 Happy Developer Games!
