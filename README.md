@@ -129,7 +129,7 @@ Congratulations! Your environment is now ready to use. Once you have done the ne
 
 
 ## Bonus track (optional)
-This challenge comes with 1 bonus track where you will learn how to configure the image build strategy that OpenShift will use. Apart from S2I for OpenShift, Dekorate currently supports Docker and Jib as image build strategies, use `Jib` to complete this part.
+This challenge comes with 1 bonus track where you will learn how to configure the image build strategy that OpenShift will use. Apart from S2I for OpenShift, Dekorate currently supports Docker and Jib as image build strategies, feel free to choose one of them to complete this part.
 
 
 :warning::warning::warning: **NOTE** :warning::warning::warning:
