@@ -132,7 +132,8 @@ Congratulations! Your environment is now ready to use. Once you have done the ne
 This challenge comes with 1 bonus track where you will learn how to configure the image build strategy that OpenShift will use. Apart from S2I for OpenShift, Dekorate currently supports Docker and Jib as image build strategies, feel free to choose one of them to complete this part.
 
 
-:warning::warning::warning: **NOTE** :warning::warning::warning:
+:warning::warning::warning: **IMPORTANT NOTE** :warning::warning::warning:
+
 If you use Codeready Workspaces, it will not be possible to use Docker as Image Build Strategy because `docker` is not available in this environment.
 
 Dekorate will NOT push images on its own. If the Image Build Strategy is configured for using Docker, it will delegate to the docker binary. So the user needs to make sure beforehand they are logged in and have taken all necessary actions for a docker push to work.
