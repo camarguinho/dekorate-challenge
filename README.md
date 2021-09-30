@@ -1,3 +1,24 @@
+# Build instructions
+
+## Build
+```shell
+mvn clean package
+```
+
+## Prepare Build on openshift
+```shell
+oc start-build dekorate-challenge --from-dir=./target --follow
+```
+
+## Deploy to Openshift
+```shell
+oc login
+oc project $USERNAME-dekorate-challenge
+oc apply -f target/classes/META-INF/dekorate/openshift.yml
+```
+
+---
+
 # Dekorate Challenge
 
 ## Introduction
