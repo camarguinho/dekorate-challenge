@@ -2,21 +2,9 @@ forked from https://github.com/Red-Hat-Developer-Games/dekorate-challenge.git
 
 # Build instructions
 
-## Build
+## All steps on one command
 ```shell
-mvn clean package
-```
-
-## Prepare Build on openshift
-```shell
-oc start-build dekorate-challenge --from-dir=./target --follow
-```
-
-## Deploy to Openshift
-```shell
-oc login
-oc project $USERNAME-dekorate-challenge
-oc apply -f target/classes/META-INF/dekorate/openshift.yml
+mvn clean package -Ddekorate.build=true -Ddekorate.push=true -Ddekorate.deploy=true
 ```
 
 ---
