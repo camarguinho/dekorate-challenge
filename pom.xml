@@ -36,7 +36,14 @@
 			<artifactId>rest-assured</artifactId>
 			<scope>test</scope>
 		</dependency>
+        <!-- Jib Annotation - comment this to enable s2i build -->
+        <dependency>
+            <groupId>io.dekorate</groupId>
+            <artifactId>jib-annotations</artifactId>
+            <version>2.5.0</version>
+        </dependency>
 	</dependencies>
+    
 
 	<build>
 		<plugins>
